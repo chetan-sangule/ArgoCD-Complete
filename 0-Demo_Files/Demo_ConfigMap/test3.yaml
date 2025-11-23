@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1apha1
+kind: Application
+metadata:
+  name: test3
+spec:
+  source:
+   repoURL: git@github.com:chetan-sangule/ArgoCD-Complete.git
+   revision: HEAD
+   path: 0-Demo_Files/Demo_ConfigMap
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: test3
+  syncPolicy:
+    automated:
+      enabled: true
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
