@@ -2,6 +2,7 @@ apiVersion: argoproj.io/v1apha1
 kind: Application
 metadata:
   name: test3
+  namespace: argocd
 spec:
   source:
    repoURL: git@github.com:chetan-sangule/ArgoCD-Complete.git
